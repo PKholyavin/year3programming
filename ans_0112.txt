@@ -5,16 +5,22 @@
 all_nums = sorted([int(i) for j in text for i in j.strip().replace("-", " ").split()])
 print(all_nums)
 
+Без replace():
+all_nums = sorted([int(t) for j in text for i in j.strip().split() for t in i.split("-")])
+print(all_nums)
+
 Длинное решение:
 text_integer = []
-for i in text:
-    i = i.strip("\n")
-    i = i.split(" ")
-    for h in i:
-        h = h.split("-")
-        for l in h:
-            l = int(l)
-            text_integer.append(l)
+for line in text:
+    line = line.strip("\n")
+    line = line.split(" ")
+    for word in line:
+        word = word.split("-")
+        for number in word:
+            number = int(number)
+            text_integer.append(number)
 
 text_integer = sorted(text_integer)
 print(text_integer)
+
+Помните, что не всегда короче == лучше! Длинное решение легче читать!
