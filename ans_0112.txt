@@ -1,0 +1,5 @@
+1. 4
+2. [1, [2, 3, 2, 3]] [1, [2, 3, 2, 3]]
+3.
+all_nums = sorted([int(i) for j in text for i in j.strip().replace("-", " ").split()])
+print(all_nums)
