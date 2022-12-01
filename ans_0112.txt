@@ -20,7 +20,7 @@ for line in text:
             number = int(number)
             text_integer.append(number)
 
-text_integer = sorted(text_integer)
+text_integer.sort()
 print(text_integer)
 
 Помните, что не всегда короче == лучше! Длинное решение легче читать!
