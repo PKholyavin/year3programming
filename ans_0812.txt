@@ -1,0 +1,25 @@
+1. ZeroDivisionError
+2. TypeError
+3.
+Решение с пары:
+
+def to_dict(iterable):
+    indices = range(len(iterable))
+    dictionary = {}
+    for i, j in zip(indices, iterable):
+        dictionary[i] = j
+    return dictionary
+
+Короткие решения:
+
+def to_dict(iterable):
+    return {i: el for i, el in enumerate(iterable)}
+
+def to_dict(iterable):
+    return dict(zip(range(len(iterable)), iterable))  # много скобок => плохо читается
+
+Следующее решение работает только с индексируемыми объектами!
+(не все итерируемые объекты индексируемые, например множества)
+
+def to_dict(iterable):
+    return {i: iterable[i] for i in range(len(iterable))}
